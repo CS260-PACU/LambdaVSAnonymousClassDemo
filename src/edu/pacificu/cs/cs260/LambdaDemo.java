@@ -9,8 +9,26 @@ public class LambdaDemo
     System.err.println( transform.apply(x) );
   }
 
+
+
+
+
   public static void main (String args[]) {
     displayResult(100, x -> x + x);
+
+    Function<Integer, Integer> decisionFunc =
+        x ->
+        {
+          if (x > 10) {
+            return x + x;
+          }
+          else {
+            return x * x;
+
+          }
+        };
+
+    displayResult (3, decisionFunc);
   }
 
 }
